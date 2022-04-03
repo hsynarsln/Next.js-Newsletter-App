@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import AddressIcon from '../icons/address-icon';
 import ArrowRightIcon from '../icons/arrow-right-icon';
@@ -19,7 +20,9 @@ const EventItem = props => {
 
   return (
     <li className={classes.item}>
-      <img src={'/' + image} alt={title} />
+      {/* <img src={'/' + image} alt={title} /> */}
+      {/* next/image --> ile image'in boyutunun ciddi anlamda düşürüyoruz. */}
+      <Image src={'/' + image} alt={title} width={250} height={160} />
       <div className={classes.content}>
         <div className={classes.summary}>
           <h2>{title}</h2>

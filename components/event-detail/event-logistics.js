@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import AddressIcon from '../icons/address-icon';
 import DateIcon from '../icons/date-icon';
 import classes from './event-logistics.module.css';
@@ -16,7 +17,9 @@ function EventLogistics(props) {
   return (
     <section className={classes.logistics}>
       <div className={classes.image}>
-        <img src={'/' + image} alt={imageAlt} />
+        {/* <img src={'/' + image} alt={imageAlt} /> */}
+        {/* next/image --> ile image'in boyutunun ciddi anlamda düşürüyoruz. */}
+        <Image src={'/' + image} alt={imageAlt} width={300} height={320} />
       </div>
       <ul className={classes.list}>
         <LogisticsItem icon={DateIcon}>
