@@ -1,4 +1,4 @@
-import { connectDatabase, getAllDocuments } from '../../../helpers/db-utils';
+import { connectDatabase, getAllDocuments, main } from '../../../helpers/db-utils';
 
 async function handler(req, res) {
   const eventId = req.query.eventId;
@@ -22,7 +22,7 @@ async function handler(req, res) {
       return;
     }
 
-    console.log(email, name, text);
+    // console.log(email, name, text);
 
     const newComment = {
       // id: new Date().toISOString(),
@@ -36,14 +36,12 @@ async function handler(req, res) {
 
     try {
       result = await main(client, 'comments', newComment);
+      newComment._id = result.insertedId;
+      res.status(201).json({ message: 'added comment', comment: newComment });
     } catch (error) {
       res.status(500).json({ message: 'Add comment to database failed!' });
       return;
     }
-
-    newComment._id = result.insertedId;
-
-    res.status(201).json({ message: 'added comment', comment: newComment });
   }
 
   if (req.method === 'GET') {
