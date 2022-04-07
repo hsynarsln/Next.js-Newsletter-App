@@ -16,7 +16,6 @@
 
 - [Overview](#overview)
 - [Built With](#built-with)
-- [Features](#features)
 - [How to use](#how-to-use)
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
@@ -43,7 +42,6 @@ To clone and run this application, you'll need [Git](https://git-scm.com)
 ```bash
 # Clone this repository
 $ git clone https://github.com/hsynarsln/Next.js-Newsletter-App.git
-$ cd client/
 
 # Install dependencies
     > npm run dev
